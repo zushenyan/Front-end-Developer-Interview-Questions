@@ -16,7 +16,7 @@ One of the technique I've done is putting the assets on CDN to have them cached 
 
 - Can you describe some SEO best practices or techniques you have used lately?
 
-In my last job, I was using React to build website, that meaned we had to adapt SSR to enable SEO. This is importatnt since CSR can't be completely parsed by search engines' crawlers so apating SSR is necessary.
+In my last job, I was using React to build website, that meant we had to adapt SSR to enable SEO. This is importatnt since CSR can't be completely parsed by search engines' crawlers so apating SSR is necessary.
 
 Other techniques I've used are
 
