@@ -282,8 +282,10 @@ The difference between `call stack` and `task queue` is `call stack` is the cont
 
 - What are the differences between variables created using `let`, `var` or `const`?
 
-`let` mutable, block scope, hoisted in block scope.
 `var` mutable, global scope, hoisted in global scope.
+
+`let` mutable, block scope, hoisted in block scope.
+
 `const` immutable, block scope, hoisted in block scope.
 
 - What are the differences between ES6 class and ES5 function constructors?
