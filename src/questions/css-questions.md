@@ -87,9 +87,11 @@ Pros:
 1. Some preprocessors provide extra syntaxes to make the code shorter.
 2. Some of them would automatically add browser prefix to properties.
 3. Some will resolve the naming conflict by creating namespace or adding hash to your classes.
-   Cons:
-4. Developers will have to learn new syntaxes.
-5. Extra overhead to be maintained as new tool is introduced.
+
+Cons:
+
+1. Developers will have to learn new syntaxes.
+2. Extra overhead to be maintained as new tool is introduced.
 
 - How would you implement a web design comp that uses non-standard fonts?
 
