@@ -13,16 +13,26 @@ Because browsers put the limit on requests number per domain. For example Chrome
 1. You type the `foobar.com` in the browser search bar.
 2. The browser will check if it is in cache. If it is, then skip to browser rendering step.
 3. The browser will start looking for the real IP address in this order
+
    a. browser cache
+   
    b. os cache
+   
    c. router cache
+   
    d. ISP cache
+   
 4. If none of them has IP address, then the ISP will initiate a recursive DNS query between DNS servers. It will look for domain in this order
+
    a. `.` root domain
+   
    b. `edu`, `org`, `com` top-level domain
+   
    c. `microsoft.com`, `wikipedia.org` second-level domain
+   
    d. `download.microsoft.com`, `www.wikipedia.org` thrid-level domain
-5. if it find an IP address, then the browser will start establishing TCP connection between server through handshaking.
+   
+5. if it finds an IP address, then the browser will start establishing TCP connection between server through handshaking.
 6. the browser sends an HTTP request to the server.
 7. the server handles the request and sends an HTTP response.
 8. the browser parses the content of HTTP resonse and display it.
