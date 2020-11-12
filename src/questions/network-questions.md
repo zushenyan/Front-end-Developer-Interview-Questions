@@ -54,13 +54,21 @@ Because browsers put the limit on requests number per domain. For example Chrome
   - X-Frame-Options
 
 `expires` indicates that after the time the response is considered stale.
+
 `date` the time the message was sent.
+
 `age` the elapsed time of the response which has been in a proxy cache.
+
 `if-modified-since` if the request has not been modified since, the repsonse will be `304`. If not, then the server will send back with `200`, only if it has been last modified after the given time.
+
 `DNT` indicates the user privacy preference.
+
 `cache-contorl` indicates the cache preference of the response or request.
+
 `transfer-encoding` specifies the encoding method for transfering payload body to the user.
+
 `etag` the version of the resourece.
+
 `x-frame-options` indifcate if the browser are allowed to render pages in `<iframe>`, `<object>`, `<embed>`.
 
 - What are HTTP methods? List all HTTP methods that you know, and explain them.
