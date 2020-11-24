@@ -11,9 +11,11 @@ pros
 1. be confident in refactoring.
 2. to find out potential bugs.
 3. acts as a specification or usage.
-   cons
-4. takes extra time to write.
-5. takes extra time to maintain.
+
+cons
+
+1. takes extra time to write.
+2. takes extra time to maintain.
 
 # What tools would you use to test your code's functionality?
 
