@@ -118,3 +118,40 @@ cookies - it's a type of storage that can hold up to 4 MB sent by a server and k
 session storage - a part of web storage. It can only persist the data before user closes the tab. Web storage cannot be shared across domains.
 
 local storage - a part of webstorage. I can persist the data after user closes the tab. Web storage cannot be shared across domains.
+
+# GraphQL vs Restful
+
+Graphql - Pros
+
+- single endpoint.
+- single request for all the resources you need (no multiple request, redundant fields)
+- no versioning
+
+Graphql - Cons
+
+- learning cruve.
+- abandon application cache provided by browsers. You have to implement your own solution or looking for library for help.
+
+# `trunk-based flow` vs `Gitflow`
+
+![Gitflow](https://uploads.toptal.io/blog/image/129305/toptal-blog-image-1551794424851-b3d5928bc33edfc954ef460062e5cbcc.png)
+
+pros
+
+- features can be broken down into pieces for different teams to develop.
+
+cons
+
+- extra complexity to manage.
+- slow to iterate a product.
+
+![trunk-based](https://uploads.toptal.io/blog/image/129304/toptal-blog-image-1551794413174-f4139c4be533dc592d49f9a0bcc330f0.png)
+
+pros
+
+- easy to manage.
+- fast to iterate a product.
+
+cons
+
+- might not working well if you have multiple teams to work on the same product.
