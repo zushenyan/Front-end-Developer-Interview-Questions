@@ -154,4 +154,4 @@ pros
 
 cons
 
-- might not working well if you have multiple teams to work on the same product.
+- might not work well if you have multiple teams to work on the same product.
