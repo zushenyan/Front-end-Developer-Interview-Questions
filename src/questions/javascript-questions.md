@@ -6,23 +6,26 @@ permalink: /questions/javascript-questions/index.html
 
 # Explain event delegation.
 
-In JavaScript and DOM, and triggered event will not only captured in its own scope but bubble up to parent elements and keep going up.
+In DOM, and triggered event that has been be captured will keep bubbling up until hitting the root element. We can take advantage of this behaviour and register an event listener to the parent intead of each child.
 
-For example
+To stop bubbling, we can call `event.stopPropogation()`.
 
 ```html
-<div id="parent">
-  <div id="child">click me</div>
-</div>
+<ul id="p">
+  <li id="c1">aaa</li>
+  <li id="c2">bbb</li>
+  <li id="c3">ccc</li>
+</ul>
 
 <script>
-  const p = document.getElementById("parent");
-  const c = document.getElementById("child");
+  const p = document.getElementById("p");
   p.addEventListener("click", (e) => {
-    console.log("catched in parent");
+    console.log(e.target);
   });
-  c.addEventListener("click", (e) => {
-    console.log("catched in child");
+
+  const c1 = document.getElementById("c1");
+  c1.addEventListener("click", (e) => {
+    e.stopPropagation(); // c1 will not be logged
   });
 </script>
 ```
@@ -170,21 +173,24 @@ var b = 1;
 
 # Describe event bubbling.
 
-In DOM, triggered events will be bubbled up to its parents even if it is captured.
+In DOM, a triggered event will keep bubbling up until hitting a root element, capturing the event doesn't stop it from bubbling, unless we call `event.stopPropagation()`.
 
 ```html
-<div id="parent">
-  <div id="child">click me</div>
-</div>
+<ul id="p">
+  <li id="c1">aaa</li>
+  <li id="c2">bbb</li>
+  <li id="c3">ccc</li>
+</ul>
 
 <script>
-  const p = document.getElementById("parent");
-  const c = document.getElementById("child");
+  const p = document.getElementById("p");
   p.addEventListener("click", (e) => {
-    console.log("catched in parent");
+    console.log(e.target);
   });
-  c.addEventListener("click", (e) => {
-    console.log("catched in child");
+
+  const c1 = document.getElementById("c1");
+  c1.addEventListener("click", (e) => {
+    e.stopPropagation(); // c1 will not be logged
   });
 </script>
 ```
@@ -382,6 +388,34 @@ const func = async () => {
   // ...
 };
 ```
+
+# How does JS handle garbage collection?
+
+Originally it uses `reference-counting` as its strategy.
+
+```js
+const x = { a: 1 };
+const y = x;
+const x = null; // {a: 1} is still used by y
+const y = null; // {a: 1} is no longer used. It should be freed afterward.
+```
+
+However there is a flaw when it is in the scenario of circular reference.
+
+```js
+const func = () => {
+  const x = {};
+  const y = {};
+  x.a = y;
+  y.a = x;
+};
+
+func();
+```
+
+To resolve this issue, JS has switched to `mark-and-swipe` strategy. As an improvement, it changes the defenition of unused reference from `an object is not needed` to `an object is unreachable`.
+
+It assumes there is a root object which "connects" all other objects, and the algorithm will start from the root to find any unreachable object and recycle them.
 
 # Make this work:
 

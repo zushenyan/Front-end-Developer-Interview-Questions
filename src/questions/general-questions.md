@@ -99,7 +99,11 @@ There is no difference in performance as both of them can access to GPU accelera
 
 # What does CORS stand for and what issue does it address?
 
-CORS stands for Cross-Origin Resource Sharing. It is a HTTP header that whitelists which specific domain can access to selected resrouces (e.g. images)
+It's a HTTP header that lets server to indicate what origins(domain) should be allowed to load resources on the browser.
+
+This mechanism is trying to restrict resources that can be accessed.
+
+The CORS always works when it's on the same domain. For example, `domain.a` serves a HTML document to the browser, the document can get any resources coming from `domain.a`, but it doesn't work when it is trying to get resources coming from `domain.b`, unless `domain.b` permits `domain.a` with HTTP header `Access-Control-Allow-Origin: http://domain.a`.
 
 # How did you handle a disagreement with your boss or your collaborator?
 
@@ -155,3 +159,7 @@ pros
 cons
 
 - might not work well if you have multiple teams to work on the same product.
+
+# What is `Service Worker`?
+
+# What is `Web Worker`?
